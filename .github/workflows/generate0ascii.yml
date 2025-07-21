@@ -22,7 +22,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: download file
-              run: actions/download-artifact@v4
+              uses: actions/download-artifact@v4
+              with:
+                name: my-arti
 
             - name: test file
               run: grep -i "run" dragon.txt
@@ -31,8 +33,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: download file
-              run: actions/download-artifact@v4
-              
+              uses: actions/download-artifact@v4
+              with:
+                name: my-arti
+
             - name: Read file
               run: cat dragon.txt
 
