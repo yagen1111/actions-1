@@ -29,6 +29,7 @@ jobs:
             - name: test file
               run: grep -i "run" dragon.txt
     deploy_job:
+        if: github.ref == 'refs/heads/main'
         needs: [runs_job, test_job]
         runs-on: ubuntu-latest
         steps:
