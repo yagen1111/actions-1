@@ -11,6 +11,7 @@ jobs:
             - name: List and read file
               run: |
                    echo "hello my first github actions"
+                   cd yaya
                    ls -ltra
                    cat README.md
 
